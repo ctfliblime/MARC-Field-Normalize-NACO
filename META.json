@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "Matching normalization for MARC::Field",
    "author" : [
       "Clay Fouts <cfouts@khephera.net>"
    ],
@@ -41,11 +41,15 @@
       },
       "test" : {
          "requires" : {
+            "MARC::Record" : "0",
             "Test::More" : "0.88"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.01"
+   "version" : "0.01",
+   "x_contributors" : [
+      "Clay Fouts <cfouts@liblime.com>"
+   ]
 }
 
