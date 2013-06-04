@@ -1,0 +1,6 @@
+/MARC-Field-Normalize-NACO-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
