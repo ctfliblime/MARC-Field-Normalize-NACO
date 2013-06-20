@@ -58,7 +58,7 @@
          "web" : "https://github.com/ctfliblime/MARC-Field-Normalize-NACO"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_contributors" : [
       "Clay Fouts <cfouts@liblime.com>"
    ]
