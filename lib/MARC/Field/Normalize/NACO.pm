@@ -68,7 +68,7 @@ func naco_from_array( ArrayRef $subfs ) {
     return $out;
 }
 
-func naco_from_field( MARC::Field $f, :$subfields = 'a-z68') {
+func naco_from_field( MARC::Field $f, :$subfields = 'a-df-hj-vx-z') {
     my @flat = map {@$_} grep {$_->[0] =~ /[$subfields]/} $f->subfields;
     return naco_from_array( \@flat );
 }
