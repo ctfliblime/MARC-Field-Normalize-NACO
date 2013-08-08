@@ -41,7 +41,9 @@
       },
       "test" : {
          "requires" : {
+            "List::MoreUtils" : "0",
             "MARC::Record" : "0",
+            "Method::Signatures" : "0",
             "Test::More" : "0.88"
          }
       }
@@ -58,7 +60,7 @@
          "web" : "https://github.com/ctfliblime/MARC-Field-Normalize-NACO"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_contributors" : [
       "Clay Fouts <cfouts@liblime.com>"
    ]

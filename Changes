@@ -2,9 +2,11 @@ Revision history for MARC-Field-Normalize-NACO
 
 {{$NEXT}}
 
-0.02  2013-06-20 13:58:59 PDT
+0.03  2013-08-08 13:50:14 PDT
 
 0.01  2013-06-04 17:03:27 PDT
         - Initial release
 0.02  2013-06-20 13:58:00 PDT
         - Update defaults to naco_from_field()
+0.03  2013-06-20 13:58:00 PDT
+        - Fix dependencies listing
