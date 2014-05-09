@@ -74,7 +74,7 @@ func naco_from_field( MARC::Field $f, :$subfields = 'a-df-hj-vx-z') {
 }
 
 func naco_from_authority( MARC::Record $r ) {
-    return naco_from_field( $r->field('1..') );
+    return naco_from_field( scalar $r->field('1..'), subfields => 'a-z' );
 }
 
 {
