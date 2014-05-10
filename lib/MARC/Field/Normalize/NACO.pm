@@ -8,7 +8,7 @@ use List::MoreUtils qw(natatime);
 use MARC::Field;
 use Method::Signatures;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use vars qw( @EXPORT_OK );
 use Exporter 'import';
