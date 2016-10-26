@@ -45,6 +45,8 @@ func naco_from_string( Str $s, Bool :$keep_first_comma ) {
         my $i = index $s, ',';
         $s =~ s/,/ /g;
         $s =~ s/^((?:.){$i})\s/$1,/;
+        # always strip off a trailing comma, even if it's the only one
+        $s =~ s/,$//;
     }
     else {
         $s =~ s/,/ /g;
