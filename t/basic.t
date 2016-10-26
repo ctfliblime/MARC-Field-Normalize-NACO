@@ -16,6 +16,7 @@ my @string_tests = (
     ['ümðølæt H₂0 [hocus ©ocuß]', 'UMDOLAET H20 HOCUS OCUSS'],
     ['   random     WHITE space    ', 'RANDOM WHITE SPACE'],
     ['   random|    WHITE space    ', 'RANDOM WHITE SPACE'],
+    ['Disney Book Group,', 'DISNEY BOOK GROUP'],
 );
 
 for (@string_tests) {
@@ -43,10 +44,20 @@ for (@array_tests) {
 
 pop @array_tests;
 push @array_tests,
-    [
-        [ 'a', 'Fouts, Clay', '2', 'fast', 'd', '1974-', '0', '(ZXC)1234', 'w', 'drop me'],
-        '$aFOUTS, CLAY$d1974'
-    ];
+    (
+        [
+            [ 'a', 'Fouts, Clay', '2', 'fast', 'd', '1974-', '0', '(ZXC)1234', 'w', 'drop me'],
+            '$aFOUTS, CLAY$d1974'
+        ],
+        [
+            [ 'a', 'Fouts, Clay,', '2', 'fast', 'd', '1974-', '0', '(ZXC)1234', 'w', 'drop me'],
+            '$aFOUTS, CLAY$d1974'
+        ],
+        [
+            [ 'a', 'Disney Book Group,', '2', 'fast', 'd', '1974-', '0', '(ZXC)1234', 'w', 'drop me'],
+            '$aDISNEY BOOK GROUP$d1974'
+        ],
+    );
 
 my @field_tests = map {
     [ MARC::Field->new('100', ' ', ' ', @{$_->[0]}), $_->[1] ]
@@ -57,7 +68,7 @@ for (@field_tests) {
     is $_->[0]->as_naco(subfields => 'adn'), $_->[1];
 }
 
-pop @field_tests;
+splice @field_tests, -3;
 for (@field_tests) {
     my $r = MARC::Record->new;
     $r->append_fields($_->[0]);
