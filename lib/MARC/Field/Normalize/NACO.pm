@@ -7,7 +7,7 @@ use Unicode::Normalize qw(NFD);
 use List::MoreUtils qw(natatime);
 use MARC::Field;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use vars qw( @EXPORT_OK );
 use Exporter 'import';
