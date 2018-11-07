@@ -41,10 +41,10 @@ func naco_from_string( Str $s, Bool :$keep_first_comma ) {
     $s =~ s/['\[\]ЪЬ·]//g;
 
     # blank out commas
-    if ($keep_first_comma) {
+    if ($keep_first_comma && $s =~ /,/) {
         my $i = index $s, ',';
         $s =~ s/,/ /g;
-        $s =~ s/^((?:.){$i})\s/$1,/;
+        substr $s, $i, 1, ',';
         # always strip off a trailing comma, even if it's the only one
         $s =~ s/,$//;
     }
